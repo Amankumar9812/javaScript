@@ -20,9 +20,9 @@ const myObj={
 
 const heroes=["a","b","c"]
 
-console.log(typeof bigInteger)
-console.log(typeof myFunction)
-console.log(typeof myObj)
+console.log(typeof bigInteger);
+console.log(typeof myFunction);
+console.log(typeof myObj);
 console.log(typeof number);
 console.log(typeof heroes); //Because in JavaScript, arrays are objects — they are a special kind of object designed to hold ordered data.But under the hood, they are still implemented as objects with keys and values.
 console.log(typeof heroes[1]);
