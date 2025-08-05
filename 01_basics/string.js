@@ -22,5 +22,17 @@ console.log(newId.split('-')) //split string on basis of "-" and convert in arra
 //can split on basis of anything
 console.log(newId.split('o'))
 console.log(newId.split('a'))
+console.log(newId.anchor("https")) //now deleted
+console.log(newId.at(4)) //-ve value count backward
+console.log(newId.charCodeAt(5)) //character code at this index
+console.log(newId.codePointAt(5)); //character code at given index
+/*charCodeAt(index)
+Returns the 16-bit UTF-16 code unit at the given index.
+Cannot handle characters represented by surrogate pairs (characters beyond U+FFFF) properly.
+Returns a number between 0 and 65535
 
-
+codePointAt(index)
+Returns the actual Unicode code point at the given index.
+Can handle characters beyond U+FFFF correctly by combining surrogate pairs.
+Returns the full Unicode code point (can be > 65535).*/
+console.log(newId.isWellFormed()); //check lone surrogate
