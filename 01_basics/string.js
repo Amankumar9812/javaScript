@@ -36,3 +36,53 @@ Returns the actual Unicode code point at the given index.
 Can handle characters beyond U+FFFF correctly by combining surrogate pairs.
 Returns the full Unicode code point (can be > 65535).*/
 console.log(newId.isWellFormed()); //check lone surrogate
+
+console.log("apple".localeCompare("banana"))
+/*| Value | Meaning                        |
+| ----- | ------------------------------ |
+| `-1`  | `str1` comes **before** `str2` |
+| `0`   | `str1` is **equal to** `str2`  |
+| `1`   | `str1` comes **after** `str2`  |
+ localeCompare return only these 3 values*/
+
+ console.log('a'.localeCompare('A', 'en', { sensitivity: 'base' }));
+ /*sensitivity: 'base' It means the comparison ignores:
+case differences (e.g., "a" = "A")
+accent/diacritic differences (e.g., "e" = "é")
+'en' for english*/
+
+console.log('file10'.localeCompare('file2', undefined, { numeric: true }));
+//with { numeric: true }, the comparison is done numerically, not alphabetically.
+// Output: 1
+
+/*'file10'.localeCompare('file2'); 
+Output: -1 → because "1" in "file10" comes before "2" alphabetically
+ */
+
+const newstr="hello everyone, i hope You All are Fine"
+const regex=/[a-z]/g
+console.log(newstr.match(regex))
+/*Without /g → the regex finds only the first match.
+With /g → it finds all matches in the string. */
+const str = "apple, apple, apple";
+
+// Without /g → only first match
+str.match(/apple/);     //this is same as str.match("apple")     
+// → [ 'apple', index: 0, input: 'apple, apple, apple', ... ]
+
+// With /g → all matches
+str.match(/apple/g);         
+// → [ 'apple', 'apple', 'apple' ]
+
+const text = "Cat, cAt, caT, dog, DOG, DoG";
+const regex1 = /cat/gi;
+const result = text.match(regex1);// returns array
+console.log(result); 
+/*The flags:
+g → global match (find all matches)
+i → case-insensitive (match both upper and lower case) */
+//matchAll returns iterator not array
+
+console.log("aman".padEnd(10,"/"))
+console.log("aman".padStart(41,"*"))
+//substr() deleted
