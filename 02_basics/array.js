@@ -18,3 +18,32 @@ newArr.slice(1,3) //does not include 3rd index, slice element 1 and 2
 console.log("A.", newArr); //after slice function, no change in original array
 newArr.splice(1,3) //include 3rd index
 console.log("B.", newArr); //after splice function , it can be seen that elements from index value 1 to 3 is removed from original array
+
+const marvel_heros=["ironman", "thor","hulk"]
+const dc_heros=["flash","batman","superman"]
+// marvel_heros.push(dc_heros) //change original array
+// console.log(marvel_heros); //merge both array but dc_heros is merged as complete array means array is inserted inside array
+// marvel_heros.concat(dc_heros) no change in array
+const all_heros=marvel_heros.concat(dc_heros)
+console.log(all_heros); // merged into single array, return new array
+
+//best way to merge is to use spread
+const all_new_heros=[...marvel_heros,...dc_heros] //this ... spread each element of array, once we used ... each element of marvel heros are spread into different elements
+console.log(all_new_heros);
+
+const anotherArray=[1,2,3,[4,5,6],7,[6,7,[4,5]]] //here depth is 2 as [4,5] is under [6,7] which is under main array. use flat to bring all element in one array
+const secondArray=anotherArray.flat(Infinity) //depth given in bracket, infinity means it will figure out it's depth on its own
+console.log(secondArray);
+
+//sometimes web page will give us data in object form or nodelist form or any other, but we need in array form to iterate over it
+console.log(Array.from("amankumar")); // make amankumar an array, we can pass string, object, nodelist anything and from() will make it array
+console.log(Array.isArray("amankumar")); //This creates a new array from the string and logs it.BUT this array is not stored anywhere — it's just printed.So "amankumar" is still just a string.
+
+console.log(Array.from({name:"boy"})); //this will give empty array bcz we have to tell it , either it should make arrays of value or key or anything else. if we don't it will give empty array
+
+let score1=100
+let score2=100
+let score3=100
+console.log(Array.of(score1,score2,score3));
+
+// read more about is, from and of

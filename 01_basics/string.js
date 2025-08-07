@@ -1,6 +1,6 @@
 let name=new String("aman-kumar")//in js we can use both "" or '' for string
 let totalVideo=80
-
+//strings in JavaScript are immutable
 console.log(`my name is ${name} and total video I watched is ${totalVideo}`);
 console.log(name.toUpperCase()); //it does not change in original string
 console.log(name.charAt(2));
