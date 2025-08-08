@@ -19,6 +19,16 @@ console.log("A.", newArr); //after slice function, no change in original array
 newArr.splice(1,3) //include 3rd index
 console.log("B.", newArr); //after splice function , it can be seen that elements from index value 1 to 3 is removed from original array
 
+//The splice() method in JavaScript is not just for removing elements — it can also insert new elements at any position in an array.
+//array.splice(startIndex, deleteCount, item1, item2, ..., itemN)
+/*startIndex: the position to start changing the array.
+deleteCount: how many elements to remove.
+item1, item2, ...: optional items to insert at startIndex.*/
+let array1 = [1, 2, 3, 7, 8];
+array1.splice(3, 2, 4, 5, 6); // Start at index 3, remove 2 elements (7, 8), insert 4, 5, 6
+console.log(array1);         // Output: [1, 2, 3, 4, 5, 6]
+
+
 const marvel_heros=["ironman", "thor","hulk"]
 const dc_heros=["flash","batman","superman"]
 // marvel_heros.push(dc_heros) //change original array
@@ -47,3 +57,12 @@ let score3=100
 console.log(Array.of(score1,score2,score3));
 
 // read more about is, from and of
+
+let a=[1,2,3]
+let b=a
+b.push(4)
+console.log(a); //In JavaScript, arrays (and objects) are reference types. So when you assign b = a, you're not copying the array — you're copying the reference. Any change made through b will affect a as well, since both point to the same underlying array in memory.
+
+//If you want to create a copy of a (so changes to b don’t affect a), you can do this:
+// b = [...a]; // or a.slice(), or Array.from(a)
+
